@@ -1,0 +1,41 @@
+.container {
+	padding: 0 $container-padding;
+	max-width: $container-width;
+	margin: 0 auto;
+	@media (max-width: $breakpoint1450) {
+		max-width: 1200px;
+	}
+	@media (max-width: $breakpoint1200) {
+		max-width: 1200px;
+	}
+
+	@media (max-width: $breakpoint992) {
+		max-width: 970px;
+	}
+
+	@media (max-width: $breakpoint768) {
+		max-width: 740px;
+	}
+
+	@media (max-width: $breakpoint480) {
+		max-width: none;
+	}
+}
+
+.container-right {
+	/* overflow-x: hidden; */
+	padding-left: calc((100% - $container-width)) / 2 + $container-padding;
+
+	@media (max-width: $breakpoint1200) {
+		padding-left: $container-padding;
+	}
+}
+
+.container-left {
+	/* overflow-x: hidden; */
+	padding-right: calc((100% - $container-width)) / 2 + $container-padding;
+
+	@media (max-width: $breakpoint1200) {
+		padding-right: $container-padding;
+	}
+}

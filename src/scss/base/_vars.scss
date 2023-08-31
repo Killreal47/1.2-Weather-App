@@ -1,0 +1,31 @@
+@use "sass:math";
+
+// Container
+
+$container-width: 1200 + px;
+$container-padding: 10 + px;
+
+// Font and Font Size
+
+$font-main: "Poppins", sans-serif;
+$font-accent: "Playfair Display", serif;
+$text-size: 16 + px;
+
+// Breakpoints
+$breakpoint1450: 1449.98 + px;
+$breakpoint1200: 1199.98 + px;
+$breakpoint992: 991.98 + px;
+$breakpoint768: 767.98 + px;
+$breakpoint480: 479.98 + px;
+
+// Colors
+$text-color: #000; // Цвет текста
+$accent: #ac182c; // Дополнительный цвет
+$bgColor: #ccc; // Цвет заднего фона
+$logoColor: black; // Цвет логотипа в header
+$textHeaderColor: #fff; // Цвет текста навигации в header
+
+// Burger Menu
+$burgerBreakpoint: $breakpoint992; // На каком размере появлется мобильная навигация
+$burgerColor: #131418; // цвет фона в открытом состоянии
+$burgerActiveColor: #fefefe; // цвет кнопки закрытия

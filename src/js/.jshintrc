@@ -1,0 +1,16 @@
+//файл с настройками управления контроля написания js
+{
+	"camelcase": true,
+	"indent": 2,
+	"undef": true,
+	"quotmark": false,
+	"maxlen": 160,
+	"trailing": true,
+	"curly": true,
+	"strict": false,
+	"browser": true,
+	"devel": true,
+	"jquery": true,
+	"esversion": 9,
+	"node": true
+}

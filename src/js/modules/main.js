@@ -9,7 +9,7 @@ function main() {
 	const header = document.querySelector('.header');
 	const form = document.querySelector('#form');
 	const inputCity = document.querySelector('#inputCity');
-
+	const wrapper = document.querySelector('.wrapper');
 
 	inputCity.focus();
 
@@ -31,18 +31,19 @@ function main() {
 
 	function showCard({ name, country, temp, condition, img }) {
 		const html = ` <div class="card">
-							<h2 class="card-city">${name} <span>${country}</span></h2>
-						
-							<div class="card-weather">
-								<div class="card-value">${temp} <sup>°c</sup></div>
-								<img class="card-img" src= ${img} alt="Weather">
-							</div>
-						
-							<div class="card-description">${condition}</div>
+								<div class="card-text">
+									<h2 class="card-city">${name} <span>${country}</span></h2>
+								</div>
+								<div class="card-weather">
+									<div class="card-value">${temp} <sup>°c</sup></div>
+									<img class="card-img" src= ${img} alt="Weather">
+								</div>
+							
+								<div class="card-description">${condition}</div>
 						</div>`;
 
 		//Отображаем карточку на странице
-		header.insertAdjacentHTML('afterend', html);
+		wrapper.insertAdjacentHTML('afterbegin', html);
 	}
 
 	async function getWether(city) {

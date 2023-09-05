@@ -1,19 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Rubik:300,regular,500,700);
 
-html,
-body {
-	min-height: 100vh;
-}
-
-body {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	row-gap: 50px;
-
-	font-family: 'Rubik', sans-serif;
-}
-
 .header {
 	width: 100%;
 	display: flex;
@@ -26,7 +12,7 @@ body {
 
 .title {
 	margin-bottom: 20px;
-	font-family: 'Rubik';
+	font-family: "Rubik";
 	font-weight: 700;
 	font-size: 44px;
 	line-height: 1.18;
@@ -70,16 +56,21 @@ body {
 .btn:hover {
 	background: #f5313b;
 }
-
-/* Card */
+/* ------------ Card ----------------------------------------*/
+.wrapper {
+	padding: 50px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 40px 40px;
+}
+/* ------------ Card ----------------------------------------*/
 
 .card {
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	row-gap: 20px;
-
-	padding: 30px;
+	padding: 50px;
 	min-width: 360px;
 	background-color: #fff;
 	border-radius: 6px;
@@ -87,7 +78,7 @@ body {
 }
 
 .card::before {
-	content: '';
+	content: "";
 
 	position: absolute;
 	left: 10px;
@@ -119,7 +110,7 @@ body {
 
 	color: #fff;
 	font-weight: 500;
-	font-size: 12px;
+	font-size: 15px;
 	line-height: 1;
 }
 
@@ -139,11 +130,58 @@ body {
 	font-size: 50%;
 }
 
-.card-img{
+.card-img {
 	width: 100px;
 }
 
 .card-description {
 	font-size: 20px;
 	line-height: 1.2;
+}
+
+@media (max-width: $breakpoint768) {
+	.card {
+		padding: 30px 10px;
+		&-city {
+			font-size: 23px;
+		}
+		&-weather {
+			justify-content: space-around;
+		}
+		&-value {
+			font-size: 70px;
+		}
+	}
+}
+@media (max-width: $breakpoint480) {
+	#form {
+		width: 340px;
+		.input {
+			text-align: center;
+			padding: 0;
+			font-weight: 300;
+			font-size: 15px;
+			line-height: 1;
+			color: #000000;
+		}
+		.btn {
+			width: 100px;
+			height: 54px;
+			background: #e5464f;
+			font-size: 15px;
+		}
+	}
+	.card {
+		min-width: 310px;
+		padding: 20px 10px;
+		&-city {
+			font-size: 23px;
+		}
+		&-weather {
+			justify-content: space-around;
+		}
+		&-value {
+			font-size: 70px;
+		}
+	}
 }

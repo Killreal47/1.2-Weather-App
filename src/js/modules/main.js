@@ -10,6 +10,7 @@ function main() {
 	const form = document.querySelector('#form');
 	const inputCity = document.querySelector('#inputCity');
 
+
 	inputCity.focus();
 
 
@@ -28,13 +29,13 @@ function main() {
 		header.insertAdjacentHTML('afterend', html);
 	}
 
-	function showCard({ name, country, temp, condition }) {
+	function showCard({ name, country, temp, condition, img }) {
 		const html = ` <div class="card">
 							<h2 class="card-city">${name} <span>${country}</span></h2>
 						
 							<div class="card-weather">
 								<div class="card-value">${temp} <sup>°c</sup></div>
-								<img class="card-img" src="./img/icons/snow.png" alt="Weather">
+								<img class="card-img" src= ${img} alt="Weather">
 							</div>
 						
 							<div class="card-description">${condition}</div>
@@ -73,23 +74,26 @@ function main() {
 		} else {
 			removeCard();
 
-			const info = conditions.find((obj)=>{
+			const info = conditions.find((obj) => {
 				return obj.code === data.current.condition.code;
 			});
 
 			console.log(info);
-			console.log(info.icon);
-
 
 			const condition = data.current.is_day ? info.languages[23].day_text : info.languages[23].night_text;
+			const img = data.current.is_day ? `./img/icons/day/${info.icon}.png ` : `./img/icons/night/${info.icon}.png`;
 
 			const weatherData = {
 				name: data.location.name,
 				country: data.location.country,
 				temp: data.current.temp_c,
 				condition: condition,
-				
+				img: img,
 			};
+
+
+
+
 
 
 			showCard(weatherData);

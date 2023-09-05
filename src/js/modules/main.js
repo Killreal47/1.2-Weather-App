@@ -1,3 +1,7 @@
+import conditions from "./conditions";
+
+
+
 function main() {
 	const apiKey = 'b17446bb8bcf41c286d75410233108';
 
@@ -6,6 +10,7 @@ function main() {
 	const form = document.querySelector('#form');
 	const inputCity = document.querySelector('#inputCity');
 
+	inputCity.focus();
 
 
 	function removeCard() {
@@ -68,11 +73,22 @@ function main() {
 		} else {
 			removeCard();
 
+			const info = conditions.find((obj)=>{
+				return obj.code === data.current.condition.code;
+			});
+
+			console.log(info);
+			console.log(info.icon);
+
+
+			const condition = data.current.is_day ? info.languages[23].day_text : info.languages[23].night_text;
+
 			const weatherData = {
 				name: data.location.name,
 				country: data.location.country,
 				temp: data.current.temp_c,
-				condition: data.current.condition.text,
+				condition: condition,
+				
 			};
 
 
